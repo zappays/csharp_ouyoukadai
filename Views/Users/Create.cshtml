@@ -1,0 +1,54 @@
+﻿@model OuyouKadai.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>会員登録</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group row my-1">
+                <label asp-for="Name" class="control-label col-sm-1"></label>
+
+                <div class="col-sm-8">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row my-1">
+                <label asp-for="Pass" class="control-label col-sm-1"></label>
+                <div class="col-sm-8">
+                    <input asp-for="Pass" class="form-control" />
+                    <span asp-validation-for="Pass" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row my-1">
+                <label asp-for="AuthID" class="control-label col-sm-1"></label>
+                <div class="col-sm-8">
+                    <select asp-for="AuthID" class="form-control" asp-items="ViewBag.SelectOptions">
+                        <option value="">--選択してください--</option>
+                    </select>
+                    <span asp-validation-for="AuthID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span asp-validation-for="Id" class="text-danger"></span>
+                <input type="submit" value="登録" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">会員一覧</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
