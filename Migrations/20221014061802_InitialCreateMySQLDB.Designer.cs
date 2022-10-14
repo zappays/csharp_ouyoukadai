@@ -11,7 +11,7 @@ using OuyouKadai.Data;
 namespace OuyouKadai.Migrations
 {
     [DbContext(typeof(OuyouKadaiContext))]
-    [Migration("20221013084034_InitialCreateMySQLDB")]
+    [Migration("20221014061802_InitialCreateMySQLDB")]
     partial class InitialCreateMySQLDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

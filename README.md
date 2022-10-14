@@ -29,13 +29,12 @@ DROP TABLE IF EXISTS user, taskitem, status, priority, auth, __efmigrationshisto
 
 4. Migrationsフォルダがあればフォルダごと削除
 
-5. Visual Studioの左下のウィンドウにある「パッケージマネージャーコンソール(PM)」からマイグレーション
+5. マイグレーションを実行　--Visual Studioの左下のウィンドウにある「パッケージマネージャーコンソール(PM)」からコマンドを入力
 ```
 Add-Migration InitialCreateMySQLDB
 ```
 
-6. マイグレーションで作成されたファイルを編集　（datetimeの(6)を削除とか）
-PM> パッケージマネージャーコンソールからデータベースを更新
+6. マイグレーションで作成されたファイルでデータベースを更新　--「パッケージマネージャーコンソール(PM)」からコマンドを実行
 ```
 Update-Database
 ```
