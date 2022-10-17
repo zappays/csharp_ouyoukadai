@@ -34,7 +34,7 @@ namespace OuyouKadai.Models
 
         [Required]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
         [Display(Name = "登録日時")]
         public DateTime Created_at { get; set; }
 
@@ -45,7 +45,7 @@ namespace OuyouKadai.Models
         public string? Updated_by_name { get; set; }
 
         [DataType(DataType.DateTime)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
         [Display(Name = "更新日時")]
         public DateTime? Updated_at { get; set; }
 

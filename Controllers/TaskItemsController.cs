@@ -59,7 +59,7 @@ namespace OuyouKadai.Controllers
             ViewBag.SelectOptionsPriority = _context.Priority.ToArray()
                 .Select(m => new SelectListItem() { Value = m.Id.ToString(), Text = m.Priority_name });
 
-            ViewBag.Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            ViewBag.Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
             return View();
         }
