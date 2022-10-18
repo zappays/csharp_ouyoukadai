@@ -81,21 +81,32 @@ namespace OuyouKadai.Controllers
             {
                 return NotFound();
             }
-            
+
+            // 編集されるユーザーを取得
             var user = await _context.User.FindAsync(id);
 
-            // 登録者のIDを取得
-            int reg_id = _context.User.Where(m => m.Id == id).FirstOrDefault().RegID;
-            // 登録者のIDからユーザー名を取得して、Reg_nameに格納
-            user.Reg_name = _context.User.Where(m => m.Id == reg_id).FirstOrDefault().Name;
+            // 編集されるユーザーの登録者を取得
+            var reg_user = _context.User.Where(m => m.Id == user.RegID).FirstOrDefault();
 
-            // 更新者のIDを取得（更新されたことのないユーザーの場合 null が代入される）
-            int? updated_id = _context.User.Where(m => m.Id == id).FirstOrDefault().Updated_byID;
-
-            // updated_id にnull以外が代入されていた場合、Updated_by_name にupdated_idと同じidを持つユーザーのNameを代入
-            if (updated_id != null)
+            //　編集されるユーザーの登録者が退会済みかどうか
+            if (reg_user != null)
             {
-                user.Updated_by_name = _context.User.Where(m => m.Id == updated_id).FirstOrDefault().Name;
+                // 登録者のIDからユーザー名を取得して、Reg_nameに格納
+                user.Reg_name = reg_user.Name;
+            }
+            else
+            {
+                user.Reg_name = "退会済みユーザー";
+            }
+
+            // 編集されるユーザーの更新者を取得
+            var updated_user = _context.User.Where(m => m.Id == user.Updated_byID).FirstOrDefault();
+
+            //　編集されるユーザーの更新者が退会済みかどうか
+            if (updated_user != null)
+            {
+                // 更新者のIDからユーザー名を取得して、Updated_by_nameに格納
+                user.Updated_by_name = updated_user.Name;
             }
 
             ViewBag.SelectOptions = _context.Auth.ToArray()
