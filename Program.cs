@@ -27,7 +27,7 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     // ↓↓SeedData だと管理者が1名だけ登録された最低限の初期データ投入ができます↓↓
-    // ↓↓SeedData2 user, tasukitemのテストデータが数100件登録された初期データを投入できますだと↓↓
+    // ↓↓SeedData2 だとuser, tasukitemのテストデータが数2000件登録された初期データを投入できます↓↓
     SeedData2.Initialize(services); 
 }
 

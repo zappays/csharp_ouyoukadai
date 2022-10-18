@@ -8,8 +8,8 @@ namespace OuyouKadai.Models
 {
     public class User
     {
-        [Range(1, int.MaxValue, ErrorMessage = "値は214748367以下にする必要があります")]
-        [Required(ErrorMessage = "IDを入力してください")]
+        [Range(1, 214748367, ErrorMessage = "IDは「1」以上、「214748367」以下で入力してください")]
+        [Required(ErrorMessage = "IDは「1」以上、「214748367」以下で入力してください")]
         [Display(Name = "ID")]
         public int? Id { get; set; }
 
