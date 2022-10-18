@@ -8,14 +8,14 @@ https://github.com/zappays/csharp_ouyoukadai
 基本的なCRUD機能を備えたTodoアプリ のようなもの
 
 ## 開発環境
-* Microsoft Visual Studio Community 2022 Version 17.3.5
+* Microsoft Visual Studio Community 2022 Version 17.3.6
 * C# 10.0
 * .NET 6.0.9
 * MySQL 8.0.30
 ---
 ## 起動前準備
 ### データベース接続準備（MySQLのみ有効）
-1. appsettings.jsonフォルダに接続先DBの情報を記載する（先にMySQLでログインユーザ、パスワード、データベースを作成しておく）
+1. appsettings.jsonファイルに接続先DBの情報を記載する（先にMySQLでログインユーザ、パスワード、データベースを作成しておく）
 
 2. コマンドプロンプトを起動しMySQLにログイン（例）
 ```
